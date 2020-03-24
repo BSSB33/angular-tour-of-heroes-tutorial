@@ -1,8 +1,25 @@
-<h2>{{hero.name | uppercase}} Details</h2>
+<!--<h2>{{hero.name | uppercase}} Details</h2>
 <div><span>id: </span>{{hero.id}}</div>
 <div><span>name: </span>{{hero.name}}</div>
 <div><span>level: </span>{{hero.level}}</div>
 <div><br></div>
 <div><label>id: <input [(ngModel)]="hero.id" placeholder="id"/></label></div>
 <div><label>name: <input [(ngModel)]="hero.name" placeholder="name"/></label></div>
-<div><label>level: <input [(ngModel)]="hero.level" placeholder="level"/></label></div>
+<div><label>level: <input [(ngModel)]="hero.level" placeholder="level"/></label></div>-->
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span> <span> {{hero.name | uppercase}} </span> - Level: {{hero.level}}
+    </li>
+</ul>
+
+<div *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedHero.id}}</div>
+    <div>
+        <label>name:
+            <input [(ngModel)]="selectedHero.name" placeholder="name" />
+        </label>
+    </div>
+</div>
