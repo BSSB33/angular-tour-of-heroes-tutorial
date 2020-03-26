@@ -15,3 +15,16 @@
         </a>
     </li>
 </ul>
+
+<div>
+    <label>Hero name:
+        <input #heroName />
+    </label>
+    <label>Hero level:
+        <input #heroLevel/>
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(heroName.value, heroLevel.value); heroName.value=''; heroLevel.value='';">
+      Add
+    </button>
+  </div>
