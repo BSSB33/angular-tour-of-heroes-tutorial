@@ -13,6 +13,7 @@
         <a routerLink="/detail/{{hero.id}}">
             <span class="badge">{{hero.id}}</span> <span> {{hero.name | uppercase}} </span> - Level: {{hero.level}}
         </a>
+        <button class="delete" title="Delete hero" (click)="delete(hero)">X</button>
     </li>
 </ul>
 
